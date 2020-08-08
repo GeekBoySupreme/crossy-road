@@ -27,12 +27,13 @@ button {
   visibility: hidden;
 }
 #end button {
-  background-color: red;
+  background-color: rgb(231, 50, 18);
   padding: 20px 50px 20px 50px;
   font-family: inherit;
   font-size: inherit;
+  animation : colorPop 2s linear infinite;
 }
-#controlls {
+#controls {
   position: absolute;
   min-width: 100%;
   min-height: 100%;
@@ -41,7 +42,7 @@ button {
   justify-content: left;
   padding: 25px;
 }
-#controlls div {
+#controls div {
   display: grid;
   grid-template-columns: 50px 50px 50px;
   grid-template-rows: auto auto;
@@ -49,11 +50,43 @@ button {
   grid-row-gap: 10px;
   margin-bottom: 30px;
 }
-#controlls button {
+#controls button {
   width: 100%;
   background-color: white;
   border-radius: 3px;
 }
-#controlls button:first-of-type {
+#controls button:first-of-type {
   grid-column: 1/-1;
+}
+
+
+@keyframes colorPop {
+  0%, 100% {
+    color: white;
+    background: rgb(231, 50, 18);
+  }
+  10%, 90% {
+    color: black;
+    background: yellow;
+  }
+  20%, 80% {
+    color: white;
+    background: rgb(98, 98, 255);
+  }
+  30%, 70% {
+    color: white;
+    background: rgb(252, 34, 168);
+  }
+  35%, 65% {
+    color: black;
+    background: rgb(255, 85, 141);
+  }
+  40%, 70% {
+    color: white;
+    background: rgb(234, 6, 255);
+  }
+  50% {
+    color: black;
+    background: white;
+  }
 }
