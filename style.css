@@ -62,12 +62,12 @@ button {
 
 .credits {
   font-family: 'Nunito', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   color: rgb(53, 53, 53);
   background: white;
   border-radius: 50px;
-  width: 180px;
-  height: 40px;
+  width: 160px;
+  height: 30px;
   position: fixed;
   bottom: 30px;
   right: 10px;
