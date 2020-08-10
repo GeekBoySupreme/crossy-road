@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 
 body {
   margin: 0;
@@ -61,9 +61,34 @@ button {
 }
 
 .credits {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: rgb(53, 53, 53);
+  background: white;
+  border-radius: 50px;
+  width: 180px;
+  height: 40px;
   position: fixed;
   bottom: 30px;
   right: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 5px 10px 18px #57565646;
+  font-weight: bold;
+}
+
+i {
+  margin: 0 4px;
+}
+
+.fa-heart {
+  color: rgb(255, 87, 58);
+}
+.fa-js {
+  color: rgb(65, 65, 65);
 }
 
 @keyframes colorPop {
