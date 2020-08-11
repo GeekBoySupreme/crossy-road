@@ -35,6 +35,8 @@ let startMoving;
 let moves;
 let stepStartTimestamp;
 
+let gameOver = false; // A flag to check whether the game has been over or not
+
 const carFrontTexture = new Texture(40,80,[{x: 0, y: 10, w: 30, h: 60 }]);
 const carBackTexture = new Texture(40,80,[{x: 10, y: 10, w: 30, h: 60 }]);
 const carRightSideTexture = new Texture(110,40,[{x: 10, y: 0, w: 50, h: 30 }, {x: 70, y: 0, w: 30, h: 30 }]);
@@ -102,6 +104,8 @@ const initaliseValues = () => {
   currentColumn = Math.floor(columns/2);
 
   previousTimestamp = null;
+
+  gameOver = false;
 
   startMoving = false;
   moves = [];
@@ -433,19 +437,19 @@ document.getElementById('left').addEventListener("click", () => move('left'));
 document.getElementById('right').addEventListener("click", () => move('right'));
 
 window.addEventListener("keydown", event => {
-  if (event.keyCode == '38') {
+  if ((event.keyCode == '38') && (!gameOver)) {
     // up arrow
     move('forward');
   }
-  else if (event.keyCode == '40') {
+  else if ((event.keyCode == '40') && (!gameOver)) {
     // down arrow
     move('backward');
   }
-  else if (event.keyCode == '37') {
+  else if ((event.keyCode == '37') && (!gameOver)) {
     // left arrow
     move('left');
   }
-  else if (event.keyCode == '39') {
+  else if ((event.keyCode == '39') && (!gameOver)) {
     // right arrow
     move('right');
   }
@@ -587,6 +591,7 @@ function animate(timestamp) {
       const carMinX = vechicle.position.x - vechicleLength*zoom/2;
       const carMaxX = vechicle.position.x + vechicleLength*zoom/2;
       if(chickenMaxX > carMinX && chickenMinX < carMaxX) {
+        gameOver = true;
         endDOM.style.visibility = 'visible';
       }
     });
